@@ -1,5 +1,3 @@
-import { ClassificationType } from "typescript";
-
 //TheCatAPI
 // Schema von CatAPI
 export type Cat = {
@@ -36,3 +34,43 @@ export async function getRandomCat() {
 }
 
 // News API
+// Schema currentsAPI
+export type News = {
+  status: string;
+  news: [
+    {
+      id: string;
+      title: string;
+      description: string;
+      url: string;
+      author: string;
+      image: string;
+      language: string;
+      category: string[];
+      published: string;
+    }
+  ];
+  page: number;
+};
+
+// Was ich brauch von currentsAPI
+export type Headline = {
+  headline: string;
+};
+
+const randomHeadline = Math.floor(Math.random() * 30);
+
+function convertToText(headline: News): Headline {
+  return {
+    headline: headline.news[randomHeadline].title,
+  };
+}
+
+export async function getRandomHeadlineGerman() {
+  const response = await fetch(
+    `https://api.currentsapi.services/v1/latest-news?language=de&apiKey=dRj7MBwlYafKn4RJFGHIM--anhE1w_bpXLYKo7hdZIKJW0eX`
+  );
+  const result = (await response.json()) as News;
+  const headline = convertToText(result);
+  return headline;
+}

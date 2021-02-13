@@ -4,7 +4,7 @@ import { createElement } from "../../utils/createElement";
 import { getRandomCat } from "../../utils/api";
 
 export default {
-  title: "Components/Hello Cat",
+  title: "Components/Cat",
   parameters: { layout: "centered" },
 };
 
