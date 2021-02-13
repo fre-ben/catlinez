@@ -1,5 +1,9 @@
 import { createElement } from "../../utils/createElement";
 
-export const helloCat = createElement("p", {
-  innerText: "Hello cats!",
-});
+export function displayCat({ url }) {
+  return createElement("img", {
+    className: "catImg",
+    src: url,
+    alt: "cat",
+  });
+}
