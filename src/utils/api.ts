@@ -56,6 +56,7 @@ export type News = {
 // Was ich brauch von currentsAPI
 export type Headline = {
   headline: string;
+  link: string;
 };
 
 const randomHeadline = Math.floor(Math.random() * 30);
@@ -63,6 +64,7 @@ const randomHeadline = Math.floor(Math.random() * 30);
 function convertToText(headline: News): Headline {
   return {
     headline: headline.news[randomHeadline].title,
+    link: headline.news[randomHeadline].url,
   };
 }
 

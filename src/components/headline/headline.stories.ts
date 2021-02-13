@@ -1,5 +1,5 @@
 import "./headline.css";
-import { displayHeadline } from "./headline";
+import { displayGermanHeadline } from "./headline";
 import { createElement } from "../../utils/createElement";
 import { getRandomHeadlineGerman } from "../../utils/api";
 
@@ -9,7 +9,7 @@ export default {
 };
 
 export const HeadlineFromAPI = (args, { loaded: { headline } }) => {
-  return displayHeadline(headline);
+  return displayGermanHeadline(headline);
 };
 
 HeadlineFromAPI.loaders = [
