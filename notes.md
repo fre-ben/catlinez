@@ -15,3 +15,34 @@ API Documentation | Postman Collection.
 If you need any example code, or have any questions then checkout the forum: https://forum.thatapiguy.com
 
 All the best, Aden.
+
+## Random cat
+
+// Schema von random.cat
+export type Cat = {
+file: string;
+};
+
+export type Cats = {
+results: Cat;
+};
+
+// Infos die ich brauch von der CatAPI
+export type RandomCat = {
+imgSrc: string;
+};
+
+function convertToImage(randomCat: Cat): RandomCat {
+return {
+imgSrc: randomCat.file,
+};
+}
+
+export async function getRandomCat() {
+const response = await fetch(`https://aws.random.cat/meow`);
+const result = (await response.json()) as Cat;
+const test = convertToImage(result);
+// const test = result.map((randomCat) => convertToImage(randomCat));
+console.log(result);
+return test;
+}

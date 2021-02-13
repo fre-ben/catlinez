@@ -8,7 +8,7 @@ export type Cat = {
   url: string;
 };
 
-// Infos, die ich brauch von der CatAPI
+// Infos die ich brauch von der CatAPI
 export type RandomCat = {
   imgSrc: string;
 };
@@ -28,7 +28,8 @@ export async function getRandomCat() {
       },
     }
   );
-  const result = (await response.json()) as Cat;
-  const test = convertToImage(result);
+  const result = (await response.json()) as Cat[];
+  const test = convertToImage(result[0]);
+  console.log(result);
   return test;
 }
