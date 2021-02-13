@@ -1,5 +1,6 @@
 import { ClassificationType } from "typescript";
 
+//TheCatAPI
 // Schema von CatAPI
 export type Cat = {
   breeds: string[];
@@ -30,6 +31,8 @@ export async function getRandomCat() {
   );
   const result = (await response.json()) as Cat[];
   const test = convertToImage(result[0]);
-  console.log(result);
+  console.log(result[0]);
   return test;
 }
+
+// News API
