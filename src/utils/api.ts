@@ -8,7 +8,7 @@ export type Cat = {
   url: string;
 };
 
-// Infos die ich brauch von der CatAPI
+// Infos, die ich brauch von der CatAPI
 export type RandomCat = {
   imgSrc: string;
 };
