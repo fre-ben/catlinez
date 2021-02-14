@@ -11,10 +11,28 @@ export default {
 };
 
 export const catlinez = (args, { loaded: { cat, headline } }) => {
-  return createElement("div", {
-    className: "catlinez__container",
-    childs: [displayHeader(), displayCat(cat), displayGermanHeadline(headline)],
+  const test = displayCat(cat);
+
+  const randomButton = createElement("button", {
+    className: "randomButton",
+    innerText: "Refresh",
+    onclick: async () => {
+      // location.reload();
+      // buildCatlinez.replaceChild(test, buildCatlinez.childNodes[1]);
+    },
   });
+
+  const buildCatlinez = createElement("div", {
+    className: "catlinez__container",
+    childs: [
+      displayHeader(),
+      test,
+      displayGermanHeadline(headline),
+      randomButton,
+    ],
+  });
+
+  return buildCatlinez;
 };
 
 catlinez.loaders = [
