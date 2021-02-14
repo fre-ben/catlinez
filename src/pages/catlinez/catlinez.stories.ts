@@ -17,7 +17,7 @@ export const catlinez = (args, { loaded: { cat, headline } }) => {
     className: "randomButton",
     innerText: "Refresh",
     onclick: async () => {
-      // location.reload();
+      location.reload();
       // buildCatlinez.replaceChild(test, buildCatlinez.childNodes[1]);
     },
   });
