@@ -9,6 +9,7 @@ export function displayGermanHeadline({ headline, link }) {
         innerText: headline,
       }),
       createElement("a", {
+        className: "headline__link",
         href: link,
         innerText: "Artikel lesen",
         target: "_blank",

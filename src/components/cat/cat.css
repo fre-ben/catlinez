@@ -1,2 +1,5 @@
 .catImg {
+  max-width: 22em;
+  margin: 2em 0;
+  overflow-x: auto;
 }
