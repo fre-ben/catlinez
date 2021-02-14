@@ -5,7 +5,10 @@ import { getRandomCat, getRandomHeadlineGerman } from "../../utils/api";
 import { displayCat } from "../../components/cat/randomcat";
 import { displayGermanHeadline } from "../../components/headline/headline";
 
-export default { title: "Pages/Catlinez", parameters: { layout: "centered" } };
+export default {
+  title: "Pages/Catlinez",
+  parameters: { layout: "fullscreen" },
+};
 
 export const catlinez = (args, { loaded: { cat, headline } }) => {
   return createElement("div", {
