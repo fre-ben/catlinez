@@ -11,6 +11,7 @@ export function displayGermanHeadline({ headline, link }) {
       createElement("a", {
         href: link,
         innerText: "Artikel lesen",
+        target: "_blank",
       }),
     ],
   });
