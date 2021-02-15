@@ -59,9 +59,13 @@ export type Headline = {
   link: string;
 };
 
-const randomHeadline = Math.floor(Math.random() * 30);
+export function randomNumber() {
+  const num = Math.floor(Math.random() * 30);
+  return num;
+}
 
 function convertToText(headline: News): Headline {
+  const randomHeadline = randomNumber();
   return {
     headline: headline.news[randomHeadline].title,
     link: headline.news[randomHeadline].url,
