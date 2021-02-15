@@ -59,9 +59,13 @@ export type Headline = {
   link: string;
 };
 
-const randomHeadline = Math.floor(Math.random() * 30);
+export function randomNumber() {
+  const num = Math.floor(Math.random() * 30);
+  return num;
+}
 
 function convertToText(headline: News): Headline {
+  const randomHeadline = randomNumber();
   return {
     headline: headline.news[randomHeadline].title,
     link: headline.news[randomHeadline].url,
@@ -70,7 +74,7 @@ function convertToText(headline: News): Headline {
 
 export async function getRandomHeadlineGerman() {
   const response = await fetch(
-    `https://api.currentsapi.services/v1/latest-news?language=de&apiKey=dRj7MBwlYafKn4RJFGHIM--anhE1w_bpXLYKo7hdZIKJW0eX`
+    `https://api.currentsapi.services/v1/latest-news?category=general&language=de&apiKey=dRj7MBwlYafKn4RJFGHIM--anhE1w_bpXLYKo7hdZIKJW0eX`
   );
   const result = (await response.json()) as News;
   const headline = convertToText(result);
