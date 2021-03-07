@@ -52,7 +52,3 @@ return test;
 dRj7MBwlYafKn4RJFGHIM--anhE1w_bpXLYKo7hdZIKJW0eX
 
 https://api.currentsapi.services/v1/latest-news?language=de&apiKey=dRj7MBwlYafKn4RJFGHIM--anhE1w_bpXLYKo7hdZIKJW0eX
-
-## Todo
-
-- Sport news rausfiltern

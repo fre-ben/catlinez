@@ -80,3 +80,12 @@ export async function getRandomHeadlineGerman() {
   const headline = convertToText(result);
   return headline;
 }
+
+export async function getRandomHeadlineEnglish() {
+  const response = await fetch(
+    `https://api.currentsapi.services/v1/latest-news?category=general&apiKey=dRj7MBwlYafKn4RJFGHIM--anhE1w_bpXLYKo7hdZIKJW0eX`
+  );
+  const result = (await response.json()) as News;
+  const headline = convertToText(result);
+  return headline;
+}

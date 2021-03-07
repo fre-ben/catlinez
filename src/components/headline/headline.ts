@@ -17,3 +17,21 @@ export function displayGermanHeadline({ headline, link }) {
     ],
   });
 }
+
+export function displayEnglishHeadline({ headline, link }) {
+  return createElement("div", {
+    className: "headline__container",
+    childs: [
+      createElement("p", {
+        className: "headline",
+        innerText: headline,
+      }),
+      createElement("a", {
+        className: "headline__link",
+        href: link,
+        innerText: "Read article",
+        target: "_blank",
+      }),
+    ],
+  });
+}
